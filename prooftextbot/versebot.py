@@ -45,7 +45,7 @@ except:
 
 print('Connecting to database...')
 urllib.parse.uses_netloc.append('postgres')
-url = urllib.parse.urlparse(environ['HEROKU_POSTGRESQL_ONYX_URL'])
+url = urllib.parse.urlparse(environ['HEROKU_POSTGRESQL_COBALT_URL'])
 conn = psycopg2.connect(
     database = url.path[1:],
     user = url.username,
