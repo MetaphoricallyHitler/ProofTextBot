@@ -40,8 +40,8 @@ def constructComment(commands, comment, niv, esv, kjv, nrsv):
         nextCommand = parseCommand("[leviticus 18:22 kjv]")
         if nextCommand[0] != False:
             if nextCommand[2] != '0':
-                if 'niv' in commandLower or 'esv' in commandLower or 'nrsv' in commandLower:
-                    currentComment += ('**KJV or GTFO!**\n>' + nextCommand[0]) + '\n\n'
+                if 'niv' in commandLower or 'esv' in commandLower or 'nrsv' in commandLower or 'nasb' in commandLower:
+                    currentComment += ('**KJV or GTFO!**\n>' + '\n\n'
                 currentComment += ('**Leviticus 18:22 (KJV)**\n>' + nextCommand[0]) + '\n\n'
                 
     currentComment += commentFooter
