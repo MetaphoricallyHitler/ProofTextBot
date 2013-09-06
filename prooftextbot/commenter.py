@@ -21,7 +21,7 @@ def constructComment(commands, comment, niv, esv, kjv, nrsv):
     nrsvbible = nrsv
 
     currentComment = ''
-    commentFooter = '\n[[Source](http://www.jesus-is-savior.com/)] [[Feedback]prooftextbot@zoho.com] [[FAQ](https://github.com/matthieugrieger/versebot/blob/master/docs/VerseBot%20Info.md#faq)] [[Changelog](https://github.com/matthieugrieger/versebot/blob/master/docs/CHANGELOG.md)]'
+    commentFooter = '\n[Source][www.jesus-is-savior.com](http://www.jesus-is-savior.com/) [Feedback]prooftextbot@zoho.com'
     # for command in commands:
     #    bookNumber = booknames.getBookNumber(command.lower())
     #    if bookNumber != False:
@@ -37,13 +37,13 @@ def constructComment(commands, comment, niv, esv, kjv, nrsv):
     bookNumber = booknames.getBookNumber(commands[0].lower())
     commandLower = commands[0].lower()
     if bookNumber != False:
-        nextCommand = parseCommand(commandLower)
+        nextCommand = parseCommand("[leviticus 18:22 kjv]")
         if nextCommand[0] != False:
             if nextCommand[2] != '0':
                 if 'niv' in commandLower or 'esv' in commandLower or 'nrsv' in commandLower:
                     currentComment += ('**KJV or GTFO!**\n>' + nextCommand[0]) + '\n\n'
                 else:
-                    currentComment += ('**Leviticus 18:22 (*Thou shalt not lie with mankind, as with womankind: it is abomination.*)**\n>' + nextCommand[0]) + '\n\n'
+                    currentComment += ('**Leviticus 18:22 (KJV)**\n>' + nextCommand[0]) + '\n\n'
                 
     currentComment += commentFooter
     if currentComment != commentFooter:
