@@ -1,1 +1,1 @@
-worker: python versebot/versebot.py
+worker: python prooftextbot/versebot.py
