@@ -21,14 +21,11 @@ filterwarnings("ignore", category=ResourceWarning) # Ignores ResourceWarnings wh
 
 print('Loading Bible translations...')
 try:
-    # nivbible = pickle.load(open(configloader.getNIV(), 'rb'))
-    nivbible = ''
-    # esvbible = pickle.load(open(configloader.getESV(), 'rb'))
-    esvbible = ''
-    # kjvbible = pickle.load(open(configloader.getKJV(), 'rb'))
-    kjvbible = ''
-    # nrsvbible = pickle.load(open(configloader.getNRSV(), 'rb'))
-    nrsvbible = ''
+    nivbible = pickle.load(open(configloader.getNIV(), 'rb'))
+    esvbible = pickle.load(open(configloader.getESV(), 'rb'))
+    kjvbible = pickle.load(open(configloader.getKJV(), 'rb'))
+    nrsvbible = pickle.load(open(configloader.getNRSV(), 'rb'))
+
     print('Bible translations successfully loaded!')
 except:
     print('Error while loading Bible translations. Make sure the environment vars point to correct paths.')
@@ -45,7 +42,7 @@ except:
 
 print('Connecting to database...')
 urllib.parse.uses_netloc.append('postgres')
-url = urllib.parse.urlparse(environ['HEROKU_POSTGRESQL_COBALT_URL'])
+url = urllib.parse.urlparse(environ['HEROKU_POSTGRESQL_ONYX_URL'])
 conn = psycopg2.connect(
     database = url.path[1:],
     user = url.username,
